@@ -33,7 +33,7 @@ public class BeerLoader implements CommandLineRunner {
             .minOnHand(12)
             .quantityToBrew(200)
             .price(new BigDecimal("12.95"))
-            .upc(3370100000L)
+            .upc(BEER_1_UPC)
             .build();
 
     Beer b2 =
@@ -43,7 +43,7 @@ public class BeerLoader implements CommandLineRunner {
             .minOnHand(12)
             .quantityToBrew(200)
             .price(new BigDecimal("11.95"))
-            .upc(631234300019L)
+            .upc(BEER_2_UPC)
             .build();
 
     Beer b3 =
@@ -53,7 +53,7 @@ public class BeerLoader implements CommandLineRunner {
             .minOnHand(12)
             .quantityToBrew(200)
             .price(new BigDecimal("10.95"))
-            .upc(83783375213L)
+            .upc(BEER_3_UPC)
             .build();
 
     System.out.println("Loaded Beers");
