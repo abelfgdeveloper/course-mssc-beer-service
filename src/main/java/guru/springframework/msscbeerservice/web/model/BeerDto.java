@@ -2,9 +2,9 @@ package guru.springframework.msscbeerservice.web.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.UUID;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
@@ -23,9 +23,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class BeerDto {
+public class BeerDto implements Serializable {
 
-  @Null private UUID id;
+  private static final long serialVersionUID = -1492076764647491027L;
+
+  @Null private String id;
 
   @Null private Integer version;
 

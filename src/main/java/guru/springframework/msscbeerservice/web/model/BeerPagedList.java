@@ -11,7 +11,7 @@ import org.springframework.data.domain.Pageable;
 
 public class BeerPagedList extends PageImpl<BeerDto> {
 
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = -247792308420440306L;
 
   @JsonCreator(mode = Mode.PROPERTIES)
   public BeerPagedList(

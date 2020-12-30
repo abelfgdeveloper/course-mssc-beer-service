@@ -5,10 +5,9 @@ import guru.springframework.msscbeerservice.repository.BeerRepository;
 import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-@Component
+// @Component
 public class BeerLoader implements CommandLineRunner {
 
   public static final String BEER_1_UPC = "0631234200036";

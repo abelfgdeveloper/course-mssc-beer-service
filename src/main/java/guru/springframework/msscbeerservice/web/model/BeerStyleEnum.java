@@ -10,5 +10,6 @@ public enum BeerStyleEnum {
   WHEAT,
   IP,
   PALE_ALE,
-  SAISON
+  SAISON,
+  IPA
 }

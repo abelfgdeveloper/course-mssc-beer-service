@@ -5,8 +5,8 @@ import java.sql.Timestamp;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Builder
@@ -28,12 +27,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Beer {
 
   @Id
-  @GeneratedValue(generator = "UUID")
-  @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-  @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
-  private UUID id;
+  @Column(length = 36, updatable = false, nullable = false)
+  private String id;
 
-  @Version private Long version;
+  @Version private Integer version;
 
   @CreationTimestamp
   @Column(updatable = false)
@@ -49,4 +46,9 @@ public class Beer {
   private BigDecimal price;
   private Integer minOnHand;
   private Integer quantityToBrew;
+
+  @PrePersist
+  private void prePersist() {
+    this.id = UUID.randomUUID().toString();
+  }
 }
